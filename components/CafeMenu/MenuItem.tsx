@@ -1,5 +1,6 @@
 import { MenuItemTypes } from "@/data/menu/menu";
 import { Image } from "expo-image";
+import { router } from "expo-router";
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
@@ -9,7 +10,11 @@ interface MenuItemProps {
 
 const MenuItem = ({ menuItem }: MenuItemProps) => {
   return (
-    <TouchableOpacity key={menuItem.id} style={styles.menuItem}>
+    <TouchableOpacity
+      key={menuItem.id}
+      style={styles.menuItem}
+      onPress={() => router.push(`/${menuItem.id} `)}
+    >
       <Image
         contentFit="contain"
         source={{ uri: menuItem.image }}
