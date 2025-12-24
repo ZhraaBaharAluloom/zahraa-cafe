@@ -1,15 +1,8 @@
 import { ImageBackground } from "expo-image";
-import { router } from "expo-router";
-import {
-  StyleSheet,
-  Text,
-  TextStyle,
-  TouchableOpacity,
-  ViewStyle,
-} from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 const imgURI =
-  "https://media.istockphoto.com/id/1467739359/photo/cup-of-coffee-with-smoke-and-coffee-beans-on-old-wooden-background.jpg?s=612x612&w=0&k=20&c=tE80r7iDn7S9YwIJVuKAm5KmpJPVz5HbRDc975IlKVo=";
+  "https://images.pexels.com/photos/2575830/pexels-photo-2575830.jpeg";
 
 export default function HomeScreen() {
   return (
@@ -18,19 +11,15 @@ export default function HomeScreen() {
       source={{ uri: imgURI }}
       style={styles.background}
     >
-      <TouchableOpacity onPress={() => router.push("/menu")}>
+      <View style={styles.overlay} />
+      <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Browse our special coffee ☕️</Text>
       </TouchableOpacity>
     </ImageBackground>
   );
 }
 
-interface Styles {
-  background: ViewStyle;
-  buttonText: TextStyle;
-}
-
-const styles = StyleSheet.create<Styles>({
+const styles = StyleSheet.create({
   background: {
     height: "100%",
     width: "100%",
@@ -38,13 +27,21 @@ const styles = StyleSheet.create<Styles>({
     justifyContent: "center",
     alignItems: "center",
   },
+  button: {
+    backgroundColor: "#3C3431",
+    opacity: 0.9,
+    borderRadius: 10,
+  },
   buttonText: {
-    backgroundColor: "#F9F6F095",
-    color: "#3C3431",
+    color: "#F9F6F0",
     fontSize: 20,
     fontWeight: "bold",
     paddingVertical: 16,
     paddingHorizontal: 20,
     borderRadius: 10,
+  },
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: "#F9F6F070",
   },
 });

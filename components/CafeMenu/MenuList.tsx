@@ -8,14 +8,14 @@ import {
   View,
   ViewStyle,
 } from "react-native";
-import MenuItem from "./MenuItem";
+import MenuCard from "./MenuCard";
 
 const imgURI =
   "https://media.istockphoto.com/id/1467739359/photo/cup-of-coffee-with-smoke-and-coffee-beans-on-old-wooden-background.jpg?s=612x612&w=0&k=20&c=tE80r7iDn7S9YwIJVuKAm5KmpJPVz5HbRDc975IlKVo=";
 
-export default function Menu() {
+export default function MenuList() {
   const menuList = menu.map((menuItem) => (
-    <MenuItem key={menuItem.id} menuItem={menuItem} />
+    <MenuCard key={menuItem.id} menuItem={menuItem} />
   ));
 
   return (

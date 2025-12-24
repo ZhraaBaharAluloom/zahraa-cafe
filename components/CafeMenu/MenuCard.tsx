@@ -4,11 +4,11 @@ import { router } from "expo-router";
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
-interface MenuItemProps {
+interface MenuCardProps {
   menuItem: MenuItemTypes;
 }
 
-const MenuItem = ({ menuItem }: MenuItemProps) => {
+const MenuCard = ({ menuItem }: MenuCardProps) => {
   return (
     <TouchableOpacity
       key={menuItem.id}
@@ -25,7 +25,7 @@ const MenuItem = ({ menuItem }: MenuItemProps) => {
   );
 };
 
-export default MenuItem;
+export default MenuCard;
 
 const styles = StyleSheet.create({
   menuImage: {
