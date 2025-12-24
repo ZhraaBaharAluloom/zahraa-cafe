@@ -1,11 +1,11 @@
-import HomeScreen from "@/components/Home";
+import HomeScreen from "@/components/Home/HomeScreen";
 import { View } from "react-native";
 
 export default function Index() {
   return (
     <View>
       <HomeScreen />
-      {/* <Menu /> */}
+      {/* <MenuList /> */}
       {/* <MenuItemDetail /> */}
     </View>
   );
