@@ -1,6 +1,7 @@
 import { ImageBackground } from "expo-image";
-import { router } from "expo-router";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+
+import { Link } from "expo-router";
 
 const imgURI =
   "https://images.pexels.com/photos/2575830/pexels-photo-2575830.jpeg";
@@ -13,12 +14,12 @@ export default function HomeScreen() {
       style={styles.background}
     >
       <View style={styles.overlay} />
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => router.navigate("/menu")}
-      >
-        <Text style={styles.buttonText}>Browse our special coffee ☕️</Text>
-      </TouchableOpacity>
+
+      <Link href={"/menu"} asChild>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Browse our special coffee ☕️ </Text>
+        </TouchableOpacity>
+      </Link>
     </ImageBackground>
   );
 }
@@ -30,6 +31,11 @@ const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+  },
+
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: "#F9F6F070",
   },
   button: {
     backgroundColor: "#3C3431",
@@ -43,9 +49,5 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
     paddingHorizontal: 20,
     borderRadius: 10,
-  },
-  overlay: {
-    ...StyleSheet.absoluteFillObject,
-    backgroundColor: "#F9F6F070",
   },
 });

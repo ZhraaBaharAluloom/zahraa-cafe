@@ -2,9 +2,13 @@ import { menu } from "@/data/menu/menu";
 import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import { useLocalSearchParams } from "expo-router";
+import { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
+import CustomizedButton from "../CustomizedButton";
 
 const MenuItemDetail = () => {
+  const [buttonStatus, setButtonStatus] = useState<string>("BUY IT 😍");
+
   const { menuItemId } = useLocalSearchParams();
   const menuItemDetails = menu.find((item) => item.id === +menuItemId);
 
@@ -28,6 +32,10 @@ const MenuItemDetail = () => {
           {menuItemDetails?.description}
         </Text>
       </View>
+      <CustomizedButton
+        title={buttonStatus}
+        handlePress={() => setButtonStatus("Added to cart")}
+      />
     </View>
   );
 };
