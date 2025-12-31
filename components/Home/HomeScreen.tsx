@@ -1,7 +1,6 @@
 import { ImageBackground } from "expo-image";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-
 import { Link } from "expo-router";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 const imgURI =
   "https://images.pexels.com/photos/2575830/pexels-photo-2575830.jpeg";
@@ -15,9 +14,9 @@ export default function HomeScreen() {
     >
       <View style={styles.overlay} />
 
-      <Link href={"/menu"} asChild>
+      <Link href={"/profile"} asChild>
         <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Browse our special coffee ☕️ </Text>
+          <Text style={styles.buttonText}>Welcome to my app </Text>
         </TouchableOpacity>
       </Link>
     </ImageBackground>
